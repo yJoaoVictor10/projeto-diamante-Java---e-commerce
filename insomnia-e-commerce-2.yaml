@@ -1,0 +1,470 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1748554600290
+  modified: 1748554600290
+collection:
+  - name: crud - supplier
+    meta:
+      id: fld_89c9954db6f746fbb80e9b6fc9a6d89d
+      created: 1777413505966
+      modified: 1777416543927
+      sortKey: -1777413505966
+    children:
+      - url: http://localhost:8080/suppliers
+        name: save
+        meta:
+          id: req_38c03e1cfcbb494b8617d91ae00d8554
+          created: 1777412415344
+          modified: 1777413965688
+          isPrivate: false
+          sortKey: -1777413508415
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cnpj": "33.528.982/0001-48",
+              "name": "Fornecedor Exemplo Ltda",
+              "address": "Rua das Flores, 123 - São Paulo/SP",
+              "email": "contato@fornecedor.com",
+              "status": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/suppliers
+        name: getAll
+        meta:
+          id: req_a206caddca66454c942e751f6c6cd3c5
+          created: 1777412719408
+          modified: 1777413524777
+          isPrivate: false
+          sortKey: -1777413508465
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/suppliers/1
+        name: update
+        meta:
+          id: req_0e7f47f11aeb4802bf86f3780f1e4a39
+          created: 1777412766345
+          modified: 1777413527608
+          isPrivate: false
+          sortKey: -1777413508365
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cnpj": "33.528.982/0001-48",
+              "name": "Fornecedor Exemplo Ltdaaaaa",
+              "address": "Rua das Flores, 123 - São Paulo/SP",
+              "email": "contato@fornecedor.com",
+              "status": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/suppliers/1
+        name: delete
+        meta:
+          id: req_c2477ca66fdb4e5bba37336cf6478fc8
+          created: 1777413476582
+          modified: 1777413530277
+          isPrivate: false
+          sortKey: -1777413508265
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/suppliers/by-name/{{ _.name }}
+        name: getByName
+        meta:
+          id: req_acf353932cfe48239db61c5df01e0142
+          created: 1777416421389
+          modified: 1777416565408
+          isPrivate: false
+          sortKey: -1777413508440
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      name: Fornecedor Exemplo Ltda
+  - name: crud - category
+    meta:
+      id: fld_689c6d73c4a24c219d018b1f9b4db8b0
+      created: 1777413541883
+      modified: 1777417011722
+      sortKey: -1777413541883
+    children:
+      - url: http://localhost:8080/categories/1
+        name: delete
+        meta:
+          id: req_04df5fecb63c41d7aec83e5ee6a4a35e
+          created: 1777413550259
+          modified: 1777416931948
+          isPrivate: false
+          sortKey: -1777413769368
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categories/1
+        name: update
+        meta:
+          id: req_bcca0cafae4445388f1740a756884963
+          created: 1777413552510
+          modified: 1777416928285
+          isPrivate: false
+          sortKey: -1777413769468
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "name": "Eletrônicosssss",
+              "description": "Produtos eletrônicos em geral, como celulares, notebooks e acessórios"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categories
+        name: save
+        meta:
+          id: req_d004dc8eebee46ffa679040b39de2201
+          created: 1777413553733
+          modified: 1777416923104
+          isPrivate: false
+          sortKey: -1777413769618
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "name": "Eletrônicos",
+              "description": "Produtos eletrônicos em geral, como celulares, notebooks e acessórios"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categories/by-name/{{ _.name }}
+        name: getByName
+        meta:
+          id: req_4e71f25cce9d4fe0b6130f33ef44869e
+          created: 1777413554839
+          modified: 1777417442660
+          isPrivate: false
+          sortKey: -1777413769718
+        method: GET
+        parameters:
+          - id: pair_862f3146122249cd8c10b2238cf640a4
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categories
+        name: getAll
+        meta:
+          id: req_4b90a0aef49d4efd9900e213b3bc01ad
+          created: 1777416898624
+          modified: 1777417129823
+          isPrivate: false
+          sortKey: -1777416898624
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      name: Eletrônicos
+  - name: crud - product
+    meta:
+      id: fld_a92fbae57f9245a2acf07cb319cb10d4
+      created: 1777413799619
+      modified: 1777418707257
+      sortKey: -1777413799619
+    children:
+      - url: http://localhost:8080/products/1
+        name: delete
+        meta:
+          id: req_914491efa86e43ca9dc2757c9bc2ecbf
+          created: 1777413807480
+          modified: 1777414871867
+          isPrivate: false
+          sortKey: -1777413814399
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products/1
+        name: update
+        meta:
+          id: req_19c65609e24144b785d080d0c2dbc063
+          created: 1777413808729
+          modified: 1777414869409
+          isPrivate: false
+          sortKey: -1777413814499
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id": 1,
+              "name": "Notebook Dell Inspiron",
+              "price": 3500.00,
+              "quantity": 10,
+              "supplier": {
+                "id": 1
+              },
+              "category": {
+                "id": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products
+        name: save
+        meta:
+          id: req_1202510ccc0a4a3293d1bd17d8974b96
+          created: 1777413809762
+          modified: 1777414858822
+          isPrivate: false
+          sortKey: -1777413814599
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Notebook Dell Inspiron",
+              "price": 3500.00,
+              "quantity": 10,
+              "supplier_id": 2,
+              "category_id": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products
+        name: getAll
+        meta:
+          id: req_1162fdb7e24c49c8b14ba447e7873ee4
+          created: 1777413810572
+          modified: 1777414857545
+          isPrivate: false
+          sortKey: -1777413814699
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products/price/greater-than/{{ _.price }}
+        name: findGreaterThan
+        meta:
+          id: req_ee97f01581d5407ead5b61b52566c041
+          created: 1777417996200
+          modified: 1777418607769
+          isPrivate: false
+          sortKey: -1777417996200
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products/price/less-than/{{ _.price }}
+        name: findLessThan
+        meta:
+          id: req_c548fb1df8f14a029ee8030822f90738
+          created: 1777418011283
+          modified: 1777418724030
+          isPrivate: false
+          sortKey: -1777418011283
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/products/price/between
+        name: findBetween
+        meta:
+          id: req_98df3ab87d1d49ca93765468def4b583
+          created: 1777418019251
+          modified: 1777418762772
+          isPrivate: false
+          sortKey: -1777418019251
+        method: GET
+        parameters:
+          - id: pair_fdbec0de046c468698095520e8b31cf9
+            name: min
+            value: "3000"
+            disabled: false
+          - id: pair_221ed3a89f504dc49bb836833d715f00
+            name: max
+            value: "3600"
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      price: "3600"
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1748554608519
+    modified: 1748554608519
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1748554608518
+    modified: 1748554608518
+    isPrivate: false
