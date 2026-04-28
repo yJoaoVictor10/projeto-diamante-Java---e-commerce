@@ -1,7 +1,9 @@
 package br.com.fiap.e_commerce.service;
 
 import br.com.fiap.e_commerce.model.Product;
+import br.com.fiap.e_commerce.repository.CategoryRepository;
 import br.com.fiap.e_commerce.repository.ProductRepository;
+import br.com.fiap.e_commerce.repository.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -24,9 +26,27 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product addProduct(Product product){
-        return productRepository.save(product);
+    @Autowired
+    private CategoryRepository categoryRepository;
 
+    @Autowired
+    private SupplierRepository supplierRepository;
+
+    public Product addProduct(Product product){
+
+        if (product.getCategory() != null && product.getCategory().getId() != null) {
+            var category = categoryRepository.findById(product.getCategory().getId())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Category não encontrada"));
+            product.setCategory(category);
+        }
+
+        if (product.getSupplier() != null && product.getSupplier().getId() != null) {
+            var supplier = supplierRepository.findById(product.getSupplier().getId())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Supplier não encontrado"));
+            product.setSupplier(supplier);
+        }
+
+        return productRepository.save(product);
     }
 
     // optional - projeto do null pointer exception
